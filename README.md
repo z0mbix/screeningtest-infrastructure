@@ -6,7 +6,7 @@ This repo sets up the following infrastructure on DigitalOcean:
 - 1 x nginx web/load balancer server (web-1)
 - 2 x golang app servers (app-{1,2})
 
-These are all Ubuntu 14.04 servers.
+All servers are Ubuntu 14.04.
 
 Terraform is used to provision the servers, and uses cloud-init to install, configure and run chef-client, so the servers can register with the Chef server and configure themselves according to their role.
 
@@ -30,6 +30,7 @@ Create the file **modules/common/terraform.tf** containing your validation key e
     EOF
     }
 
+You can use the sample file **modules/common/terraform.tf.sample** to help create this.
 
 ## Chef
 
