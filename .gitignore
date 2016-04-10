@@ -1,0 +1,8 @@
+env
+chef-repo/.chef/*.pem
+chef-repo/.chef/encrypted_data_bag_secret
+chef-repo/.chef/syntaxcache
+.terraform
+modules/common/terraform.tf
+terraform.tfstate
+terraform.tfstate.backup
