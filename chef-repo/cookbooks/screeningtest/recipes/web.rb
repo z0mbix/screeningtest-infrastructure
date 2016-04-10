@@ -6,7 +6,11 @@ service 'nginx' do
 end
 
 # Get all app server nodes
-app_servers = search(:node, 'role:"app"')
+if Chef::Config[:solo]
+  Chef::Log.warn('This recipe uses search. Chef Solo does not support search.')
+else
+  app_servers = search(:node, 'role:"app"')
+end
 
 # Create the nginx vhost config
 template '/etc/nginx/sites-available/default' do
